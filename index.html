@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome (https://fontawesome.com) for basic icons; source: https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style.css">
     <title>TODO</title>
 </head>
@@ -10,9 +13,51 @@
 
 <body>
     
+   <div class="container">
+        <div id = "header">
+            <div class="flexrow-container">
+                <div class="standard-theme theme-selector"></div>
+                <div class="light-theme theme-selector"></div>
+                <div class="darker-theme theme-selector"></div>
+            </div>
+            <h1 id="title">Do your tasks!<div id="border"></div></h1>
+        </div>
+
+
+        <div id="form">
+            <form>
+                <input id="input" class="todo-input" type="text" placeholder="Add a task.">
+                <button class="todo-btn" type="submit">I Got This!</button>
+            </form>
+            <div id="msg"></div>
+        </div>
 
 
 
-    <script src="script.js"></script>
+        <div>
+            <p><span id="datetime"></span></p>
+            <script src="JavaScript/time.js"></script>
+        </div>
+    
+      <div id="myUnOrdList">
+            <ul class="todo-list" id="todo-lists">
+                <!-- (Basic Format) -->
+                <!-- <div class="todo" id="todo">
+                    <div class="task" id="task">Item 1</div>
+                    <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                    <button class="check-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+                    <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                </div> -->
+            </ul>
+        </div>
+   </div>
+
+
+
+    <script src="JavaScript/script.js"></script>
 </body>
 </html>
+
+
+
+
