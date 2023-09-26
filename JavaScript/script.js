@@ -54,9 +54,9 @@ function createPost() {
     todoLists.innerHTML += `
     <div class="todo" id="todo">
         <div class="task" id="task">${data.text}</div>
-        <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
-        <button class="check-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
-        <button class="edit-btn"><i class="fas fa-edit"></i></button>
+        <button class="edit-btn"><i onClick="editPost(this)" class="fas fa-edit"></i></button>
+        <button class="delete-btn"><i onClick="deletePost(this)" class="fas fa-trash-alt"></i></button>
+        <button class="check-btn"><i onClick="checkPost() " class="fa fa-check" aria-hidden="true"></i></button>
     </div>
 `
 
@@ -66,6 +66,27 @@ function createPost() {
 
 
 
+// To delete a task from the todolist
+function deletePost (e){
+    e.parentElement.parentElement.remove()
+}
+
+
+
+
+//To edit a task from the todolist
+function editPost (e){
+    input.value = e.parentElement.previousElementSibling.innerHTML;
+    e.parentElement.parentElement.remove()
+}
+
+
+
+//To check a task in the todo list
+function checkPost() {
+    let crossTask = document.querySelector('#task')
+    crossTask.classList.add("completed")
+}
 
 
 
